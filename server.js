@@ -33,37 +33,37 @@ app.get("/", (req, res) => {
     endpoints: [
       {
         method: "POST",
-        route: "/create",
+        route: "/api/resources/create",
         description: "Create a new resource in the database.",
       },
       {
         method: "GET",
-        route: "/all",
+        route: "/api/resources/all",
         description: "Get all resources from the database.",
       },
       {
         method: "GET",
-        route: "/byId/:id",
+        route: "/api/resources/byId/:id",
         description: "Get a resource by its unique ID.",
       },
       {
         method: "PUT",
-        route: "/update/:id",
+        route: "/api/resources/update/:id",
         description: "Update a resource by its ID.",
       },
       {
         method: "DELETE",
-        route: "/delete/:id",
+        route: "/api/resources/delete/:id",
         description: "Delete a resource by its ID.",
       },
       {
         method: "POST",
-        route: "/register",
+        route: "/api/auth/register",
         description: "Register a new user.",
       },
       {
         method: "POST",
-        route: "/login",
+        route: "/api/auth/login",
         description: "Login to get a JWT token.",
       },
     ],
