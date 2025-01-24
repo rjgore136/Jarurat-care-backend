@@ -25,6 +25,51 @@ app.use("/api/resources", resourceRoutes);
 // Use the error handling middleware
 app.use(errorHandler);
 
+// "/" endpoint for API documentation
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message:
+      "Welcome to the Jarurat Care API! Below are the available endpoints:",
+    endpoints: [
+      {
+        method: "POST",
+        route: "/create",
+        description: "Create a new resource in the database.",
+      },
+      {
+        method: "GET",
+        route: "/all",
+        description: "Get all resources from the database.",
+      },
+      {
+        method: "GET",
+        route: "/byId/:id",
+        description: "Get a resource by its unique ID.",
+      },
+      {
+        method: "PUT",
+        route: "/update/:id",
+        description: "Update a resource by its ID.",
+      },
+      {
+        method: "DELETE",
+        route: "/delete/:id",
+        description: "Delete a resource by its ID.",
+      },
+      {
+        method: "POST",
+        route: "/register",
+        description: "Register a new user.",
+      },
+      {
+        method: "POST",
+        route: "/login",
+        description: "Login to get a JWT token.",
+      },
+    ],
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
